@@ -7,6 +7,7 @@ import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.uts.fragments.OptionMenu
+import com.example.uts.fragments.Tentangapk
 import com.example.uts.fragments.Tombol
 
 class Home : AppCompatActivity() {
@@ -18,14 +19,11 @@ class Home : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragmenttombol, Tombol())
+                .replace(R.id.fragmentoptionmenu, OptionMenu())
+                .replace(R.id.fragmentteksapk, Tentangapk())
                 .commitNow()
         }
 
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragmentoptionmenu, OptionMenu())
-                .commitNow()
-        }
 
     }
 
