@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    tools:context=".fragments.Tombol">
+
+    <!-- TODO: Update blank fragment layout -->
+    <Button
+        android:id="@+id/btnhome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        app:cornerRadius="0dp"
+        android:text="Home"/>
+
+    <Button
+        android:id="@+id/btnberita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cornerRadius="0dp"
+        android:background="@color/white"
+        android:layout_weight="1"
+        android:text="Berita"/>
+
+    <Button
+        android:id="@+id/btnprofile"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:cornerRadius="0dp"
+        android:background="@color/white"
+        android:layout_weight="1"
+        android:text="Profile"/>
+
+</LinearLayout>

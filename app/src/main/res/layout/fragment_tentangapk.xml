@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.Tentangapk">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp"
+            android:text="Tentang Aplikasi"
+            android:textSize="40sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:paddingVertical="20dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Aplikasi ini adalah aplikasi tentang data diri yang memungkinkan pengguna untuk menyimpan dan mengelola informasi pribadi mereka, seperti nama, alamat, tanggal lahir, nomor telepon, dan informasi lainnya. Pengguna dapat menggunakan aplikasi ini untuk dengan mudah melihat dan memperbarui data diri mereka, serta menjaga keamanan informasi pribadi dengan fitur-fitur keamanan yang disediakan. Selain itu, aplikasi ini juga dapat digunakan untuk membagikan informasi data diri dengan orang lain sesuai kebutuhan."
+
+    </LinearLayout>
+</FrameLayout>
