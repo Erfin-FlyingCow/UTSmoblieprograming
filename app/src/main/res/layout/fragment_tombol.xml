@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:gravity="bottom"
     android:background="@color/white"
     android:orientation="horizontal"
@@ -14,7 +14,7 @@
     <Button
         android:id="@+id/btnhome"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@color/white"
         app:cornerRadius="0dp"
@@ -23,7 +23,7 @@
     <Button
         android:id="@+id/btnberita"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:cornerRadius="0dp"
         android:background="@color/white"
         android:layout_weight="1"

@@ -10,7 +10,7 @@
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:background="@color/emaspucet"
         android:gravity="end"
         android:orientation="horizontal"
@@ -18,8 +18,9 @@
 
         <Spinner
             android:id="@+id/dropdown_menu"
-            android:layout_width="49dp"
-            android:layout_height="match_parent"
+            android:layout_width="50dp"
+            android:layout_gravity="bottom"
+            android:layout_height="50dp"
             android:foreground="@drawable/menu"
             android:foregroundTint="@color/white" />
     </LinearLayout>
