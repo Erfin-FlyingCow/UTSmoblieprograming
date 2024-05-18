@@ -18,11 +18,10 @@
 
         <Spinner
             android:id="@+id/dropdown_menu"
-            android:layout_width="52dp"
-            android:layout_height="43dp"
-            android:src="@drawable/baseline_apps_24"
-
-            app:tint="@color/white" />
+            android:layout_width="49dp"
+            android:layout_height="match_parent"
+            android:foreground="@drawable/menu"
+            android:foregroundTint="@color/white" />
     </LinearLayout>
 
 
