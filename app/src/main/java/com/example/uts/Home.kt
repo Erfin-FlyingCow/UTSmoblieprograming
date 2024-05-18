@@ -1,7 +1,10 @@
 package com.example.uts
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.DisplayShape
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
@@ -11,6 +14,8 @@ import com.example.uts.fragments.Tentangapk
 import com.example.uts.fragments.Tombol
 
 class Home : AppCompatActivity() {
+
+    private var sharedPreferences: SharedPreferences? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -46,18 +51,13 @@ class Home : AppCompatActivity() {
             }
 
             R.id.action_logout -> {
-                goToLogin()
+
                 true
             }
 
             else -> super.onOptionsItemSelected(item)
         }
 
-    }
-    fun goToLogin(){
-        Intent(this,Login::class.java).also {
-            startActivity(it)
-            finish()
-        }
+
     }
 }

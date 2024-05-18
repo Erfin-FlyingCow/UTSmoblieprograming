@@ -1,6 +1,8 @@
 package com.example.uts.fragments
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,6 +26,8 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class OptionMenu : Fragment() {
+
+    lateinit var sharedPreferences : SharedPreferences
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -68,7 +72,11 @@ class OptionMenu : Fragment() {
                 when (position) {
                     0 -> goToTambahData()
                     1 -> goToDataAlumni()
-                    2 -> goToLogout()
+                    2 -> {
+                        goToLogout()
+                        deleteData()
+
+                    }
                 }
 
                 val selectedItem = parent.getItemAtPosition(position).toString()
@@ -78,8 +86,17 @@ class OptionMenu : Fragment() {
             override fun onNothingSelected(parent: AdapterView<*>) {
                 // Tidak melakukan apa-apa
             }
+
+            fun deleteData(){
+                sharedPreferences = requireActivity().getSharedPreferences("Data", Context.MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.clear()
+                editor.apply()
+                Toast.makeText(requireContext(), "Data tehapus", Toast.LENGTH_SHORT).show()
+            }
         }
     }
+
 
     private fun goToTambahData() {
         // Fungsi untuk menangani navigasi ke layar Tambah Data
@@ -97,4 +114,6 @@ class OptionMenu : Fragment() {
         val intent = Intent(requireActivity(), Login::class.java)
         startActivity(intent)
     }
+
+
 }
