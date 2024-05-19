@@ -1,5 +1,7 @@
 package com.example.uts.fragments
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.FragmentTransaction
+import com.example.uts.Home
+import com.example.uts.Profile
 import com.example.uts.R
 
 private const val ARG_PARAM1 = "param1"
@@ -40,20 +44,34 @@ class Tombol : Fragment() {
         val profile = view.findViewById<Button>(R.id.btnprofile)
 
         home.setOnClickListener {
-            val fragment = Tentangapk.newInstance()
-            replaceFragment(fragment)
+
+            if (requireActivity()::class.java.simpleName!="Home") {
+                Intent(requireContext(), Home::class.java).also {
+                    startActivity(it)
+                }
+            }
+            else {
+                val fragment = Tentangapk.newInstance()
+                replaceFragment(fragment)
+            }
         }
 
         berita.setOnClickListener {
-            // Replace with the Berita Fragment
+            if (requireActivity()::class.java.simpleName!="Home") {
+                Intent(requireContext(), Home::class.java).also {
+                    startActivity(it)
+                }
+            }
+            else {
             val fragment = FragmentBerita.newInstance()
             replaceFragment(fragment)
         }
+        }
 
         profile.setOnClickListener {
-            // Replace with the Profile Fragment
-           // val fragment = ProfileFragment.newInstance()
-           // replaceFragment(fragment)
+             Intent(requireContext(),Profile::class.java).also {
+                 startActivity(it)
+             }
         }
     }
 
