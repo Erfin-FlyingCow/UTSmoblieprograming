@@ -64,12 +64,14 @@ class FragmentBerita : Fragment() {
 
         dataArrayList = ArrayList()
 
-//        for (i in gambar.indices) {
-//
-//            val data = Data(gambar[i],judul[i],deskripsi[i])
-//            dataArrayList.add(data)
-//
-//        }
+        for (i in gambar.indices) {
+
+            val data = Data(gambar[i],judul[i],deskripsi[i])
+            dataArrayList.add(data)
+
+        }
+
+
 
 
         // Inisialisasi ListView
