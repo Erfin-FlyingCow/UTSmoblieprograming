@@ -8,12 +8,16 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
+import com.example.uts.Data
 import com.example.uts.R
+import com.example.uts.databinding.ActivityDetailBeritsBinding
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 class FragmentBerita : Fragment() {
+
+    private lateinit var binding: ActivityDetailBeritsBinding
 
 
     private lateinit var listView: ListView
@@ -36,6 +40,27 @@ class FragmentBerita : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding = ActivityDetailBeritsBinding.inflate(LayoutInflater)
+
+        val gambar = intArrayOf(
+            R.drawable.cnn,
+            R.drawable.detik,
+            R.drawable.tempo
+        )
+
+        val judul = arrayOf(
+            "Elon Musk Dipastikan Ikut Resmikan Starlink di Bali Besok",
+            "Ini Sekolah Pertama yang Pakai Starlink, Netizen Salfok Kecepatan Internetnya"
+        )
+
+        val deskripsi = arrayOf(
+            "Musk akan melakukan peresmian layanan internet satelit Starlink ditemani sejumlah pejabat negara seperti Presiden Joko Widodo, Menteri Koordinator Bidang Kemaritiman dan Investasi (Menkomarves) Luhut Binsar Pandjaitan, Menteri Komunikasi dan Informatika (Menkominfo) Budi Arie Setiadi, dan Menteri Kesehatan (Menkes) Budi Gunadi Sadikin",
+            "Layanan internet berbasis satelit Starlink milik Elon Musk kini telah digunakan oleh masyarakat Indonesia, salah satunya sekolah di Jawa Timur yang diklaim pertama kali menggunakan layanan Starlink.",
+            "Hal tersebut diketahui dari postingan di Instagram milik akun @azhar.adam.abdurrohman yang mengunggah sebuah video yang menunjukkan sekolah bernama Syifaul Qulub (SQ) yang terletak di Gresik, Jawa Timur telah menjajal Starlink."
+        )
+
+        val dataArrayList = ArrayList<Data>()
 
         // Inisialisasi ListView
         listView = view.findViewById(R.id.BeritaListView)
