@@ -10,24 +10,23 @@ import android.widget.ListView
 import android.widget.Toast
 import com.example.uts.Data
 import com.example.uts.R
-import com.example.uts.databinding.ActivityDetailBeritsBinding
+import com.example.uts.databinding.FragmentBeritaBinding
+
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 class FragmentBerita : Fragment() {
 
-    private lateinit var binding: ActivityDetailBeritsBinding
-
+    private lateinit var binding: FragmentBeritaBinding
+    private lateinit var dataArrayList: ArrayList<Data>
 
     private lateinit var listView: ListView
     private lateinit var adapter: ArrayAdapter<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
 
-        }
     }
 
     override fun onCreateView(
@@ -41,7 +40,9 @@ class FragmentBerita : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding = ActivityDetailBeritsBinding.inflate(LayoutInflater)
+        binding = FragmentBeritaBinding.bind(view)
+
+
 
         val gambar = intArrayOf(
             R.drawable.cnn,
@@ -51,7 +52,8 @@ class FragmentBerita : Fragment() {
 
         val judul = arrayOf(
             "Elon Musk Dipastikan Ikut Resmikan Starlink di Bali Besok",
-            "Ini Sekolah Pertama yang Pakai Starlink, Netizen Salfok Kecepatan Internetnya"
+            "Ini Sekolah Pertama yang Pakai Starlink, Netizen Salfok Kecepatan Internetnya",
+            "Apple Disebut Akan Mulai Produksi Panel Layar iPhone 16 pada Bulan Depan"
         )
 
         val deskripsi = arrayOf(
@@ -60,7 +62,15 @@ class FragmentBerita : Fragment() {
             "Hal tersebut diketahui dari postingan di Instagram milik akun @azhar.adam.abdurrohman yang mengunggah sebuah video yang menunjukkan sekolah bernama Syifaul Qulub (SQ) yang terletak di Gresik, Jawa Timur telah menjajal Starlink."
         )
 
-        val dataArrayList = ArrayList<Data>()
+        dataArrayList = ArrayList()
+
+//        for (i in gambar.indices) {
+//
+//            val data = Data(gambar[i],judul[i],deskripsi[i])
+//            dataArrayList.add(data)
+//
+//        }
+
 
         // Inisialisasi ListView
         listView = view.findViewById(R.id.BeritaListView)
